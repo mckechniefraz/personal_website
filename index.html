@@ -8,6 +8,38 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+.collapsible {
+  cursor: pointer;
+  background: transparent;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+
+}
+.collapsible:after {
+  content: '\002B';
+  color: teal;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
 </style>
 
 <head>
@@ -28,12 +60,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
           <img src="/images/pic_me.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Frazer McKechnie</h2>
-          </div>
         </div>
         <div class="w3-container">
-          <!-- Below is the code for my Information -->
+          <!-- Below is the code for my personal details -->
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Personal Details</b></p>
+          <p><i class="fas fa-user-alt fa-fw w3-margin-right w3-large w3-text-teal"></i>Frazer McKechnie</p>
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Senior Network Engineer</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
           <p><a href="mailto:frazer@fmckechnie.io" class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></a>
@@ -47,35 +78,131 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <!-- Below code is for my Technical skills -->
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Technical Skills</b></p>
           <p>Routing and Switching</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
+          <ul>
+            <li>Routing - OSPF, BGP, EIGRP, High availability and VRF.</li>
+            <li>Switching - STP, Secure Access, Switch stacking and Port channels.</li>
+            <li>WAN - MPLS, P2P Leased lines, DIA, 4G, Cloud connectivity and Internet DDOS protection</li>
+          </ul>
+
           <p>Security</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">
-              <div class="w3-center w3-text-white">90%</div>
-            </div>
-          </div>
+          <ul>
+            <li>Next Generation Firewall</li>
+            <li>Site to site VPN</li>
+            <li>Client VPN</li>
+            <li>IPS</li>
+            <li>NSX Micro-segmentation</li>
+            <li>Zero Trust Networking</li>
+          </ul>
+
           <p>Automation</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
+          <ul>
+            <li>Python</li>
+            <li>Git</li>
+            <li>Jenkins</li>
+            <li>Webhooks</li>
+          </ul>
+
           <p>Cloud</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-          </div>
-          <p>SDN</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-          </div>
+          <ul>
+            <li>AWS</li>
+            <li>OVH</li>
+            <li>Equinix Cloud Exchange</li>
+          </ul>
+
+          <p>Other</p>
+          <ul>
+            <li>Proactive device monitoring</li>
+            <li>Change management process</li>
+            <li>Network analysis and remediation</li>
+          </ul>
           <br>
           <!-- Below is for the technology I have experiance with -->
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Technology Exposure</b></p>
-          <p>Cisco - ASR, Catalyst, CUCM, Meraki, Nexus</p>
-          <p>Juniper - SRX</p>
-          <p>VMware - NSX</p>
-          <p>Cloud - AWS</p>
-          <p>Scripting - Python, Git</p>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Vendor Experience</b></p>
+
+          <button type="button" class="collapsible">Cisco</button>
+          <div class="content">
+              <ul>
+                <li>ASR</li>
+                <li>Catalyst</li>
+                <li>Nexus</li>
+                <li>Meraki</li>
+                <li>ASA</li>
+                <li>Firepower</li>
+                <li>CUCM</li>
+              </ul>
+          </div>
+
+          <button type="button" class="collapsible">Juniper</button>
+          <div class="content">
+              <ul>
+                <li>SRX</li>
+              </ul>
+          </div>
+
+
+
+
+          <button type="button" class="collapsible">Palo Alto</button>
+          <div class="content">
+              <ul>
+                <li>Panorama</li>
+                <li>NGFW</li>
+              </ul>
+          </div>
+
+          <button type="button" class="collapsible">VMWare</button>
+          <div class="content">
+              <ul>
+                <li>NSX</li>
+                <li>ESXi</li>
+              </ul>
+          </div>
+
+          <button type="button" class="collapsible">Cisco</button>
+          <div class="content">
+              <ul>
+                <li>Direct Connect</li>
+                <li>VPC Endpoints</li>
+                <li>ELB</li>
+                <li>Security Groups</li>
+                <li>Firewall Manager</li>
+                <li>S3</li>
+                <li>Route53</li>
+                <li>EC2</li>
+              </ul>
+          </div>
+
+
+          <button type="button" class="collapsible">Solarwinds</button>
+          <div class="content">
+              <ul>
+                <li>NPM</li>
+                <li>NCM</li>
+                <li>IPAM</li>
+              </ul>
+          </div>
+
+
+          <!-- Script used for the buttons to collaps -->
+          <script>
+          var coll = document.getElementsByClassName("collapsible");
+          var i;
+
+          for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.display === "block") {
+                content.style.display = "none";
+              } else {
+                content.style.display = "block";
+              }
+            });
+          }
+          </script>
+
+
+
           <br>
         </div>
       </div><br>
@@ -85,6 +212,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- Right Column -->
     <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <!-- The below code is my personal statement -->
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user-alt fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Personal Description</h2>
+        <div class="w3-container">
+          <p>
+
+            A Cisco certified and passionate network professional with over 8 years experience designing, building and maintaining large enterprise networks.
+
+            With a proven track record of utilising my skills across routing and switching, security and automation to deliver secure and highly scalable solutions
+            across multiple organisations working in various industries.
+
+          </p>
+          <p>
+            Currently looking for a new position to utilise and build upon my current skills.
+          </p>
+        </div>
+      </div>
+
 
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <!-- The below code is my work experiance -->
@@ -141,12 +287,28 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Cisco Certified Network Professional, Routing and Switching</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018 - 2021</h6>
+          <p>
+            Industry professional level certification covering various routing and switching topics to a professional level.
+          </p>
           <hr>
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Robert Gordon University</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2009 - 2011</h6>
           <p>BSc (Hons) Network Management and Design</p>
+          <p>
+            4 year degree that included a 1 year industry placement and a honors dissertation.
+
+            The degree covers a wide range of Network related topics including:
+          </p>
+          <ul>
+            <li> Network management tools</li>
+            <li> Network design </li>
+            <li> Routing and Switching </li>
+            <li> Wireless technology </li>
+            <li> Security concerns </li>
+            <li> Data security and encryption </li>
+          </ul>
           <hr>
         </div>
       </div>
